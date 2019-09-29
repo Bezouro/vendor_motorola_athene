@@ -83,7 +83,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/lib/libmot_lux_standardization.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmot_lux_standardization.so \
     vendor/motorola/athene/proprietary/lib/libmot_sensorlistener.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmot_sensorlistener.so \
     vendor/motorola/athene/proprietary/lib/libmotaudioutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmotaudioutils.so \
-    vendor/motorola/athene/proprietary/lib/libmotext_inf.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmotext_inf.so \
     vendor/motorola/athene/proprietary/lib/libmotimager_utils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libmotimager_utils.so \
     vendor/motorola/athene/proprietary/lib/motorola.hardware.camera.device@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/motorola.hardware.camera.device@1.0.so \
     vendor/motorola/athene/proprietary/lib/motorola.hardware.camera.provider@2.4.so:$(TARGET_COPY_OUT_SYSTEM)/lib/motorola.hardware.camera.provider@2.4.so \
@@ -267,6 +266,7 @@ PRODUCT_COPY_FILES += \
 # CNE
 PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/framework/cneapiclient.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/cneapiclient.jar \
+    vendor/motorola/athene/proprietary/framework/com.quicinc.cne.api-V1.0-java.jar:$(TARGET_COPY_OUT_VENDOR)/framework/com.quicinc.cne.api-V1.0-java.jar \
     vendor/motorola/athene/proprietary/framework/com.quicinc.cne.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.quicinc.cne.jar \
     vendor/motorola/athene/proprietary/vendor/bin/cnd:$(TARGET_COPY_OUT_VENDOR)/bin/cnd \
     vendor/motorola/athene/proprietary/vendor/etc/cne/andsfCne.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/andsfCne.xml \
@@ -275,23 +275,35 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile2.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile3.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile4.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile5.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile6.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile1.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile2.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile3.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile4.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile5.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile6.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/ROW_profile7.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile1.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile2.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile3.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile4.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile5.xml \
     vendor/motorola/athene/proprietary/vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/VZW_profile6.xml \
+    vendor/motorola/athene/proprietary/vendor/lib/com.quicinc.cne.api@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.quicinc.cne.api@1.0.so \
+    vendor/motorola/athene/proprietary/vendor/lib/com.quicinc.cne.constants@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.quicinc.cne.constants@1.0.so \
+    vendor/motorola/athene/proprietary/vendor/lib/com.quicinc.cne.constants@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.quicinc.cne.constants@2.0.so \
+    vendor/motorola/athene/proprietary/vendor/lib/com.quicinc.cne.server@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.quicinc.cne.server@1.0.so \
+    vendor/motorola/athene/proprietary/vendor/lib/com.quicinc.cne.server@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.quicinc.cne.server@2.0.so \
     vendor/motorola/athene/proprietary/vendor/lib/libcne.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcne.so \
     vendor/motorola/athene/proprietary/vendor/lib/libcneapiclient.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcneapiclient.so \
     vendor/motorola/athene/proprietary/vendor/lib/libcneconn.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcneconn.so \
+    vendor/motorola/athene/proprietary/vendor/lib/libcneoplookup.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcneoplookup \
     vendor/motorola/athene/proprietary/vendor/lib/libcneqmiutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcneqmiutils.so \
     vendor/motorola/athene/proprietary/vendor/lib/libvendorconn.so:$(TARGET_COPY_OUT_VENDOR)/lib/libvendorconn.so \
     vendor/motorola/athene/proprietary/vendor/lib/libwms.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwms.so \
     vendor/motorola/athene/proprietary/vendor/lib/libwqe.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwqe.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.latency@1.0_vendor.so
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -342,9 +354,11 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/etc/permissions/ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/ims.xml \
     vendor/motorola/athene/proprietary/vendor/etc/permissions/imscm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/imscm.xml \
     vendor/motorola/athene/proprietary/vendor/etc/permissions/izat.xt.srv.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/izat.xt.srv.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml \
     vendor/motorola/athene/proprietary/vendor/etc/permissions/qcnvitems.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qcnvitems.xml \
     vendor/motorola/athene/proprietary/vendor/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qcrilhook.xml \
-    vendor/motorola/athene/proprietary/vendor/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qti_permissions.xml
+    vendor/motorola/athene/proprietary/vendor/etc/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qti_libpermissions.xml \
+    vendor/motorola/athene/proprietary/vendor/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/qti_permissions.xml \
 
 # Framework
 PRODUCT_COPY_FILES += \
@@ -520,9 +534,7 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_COPY_FILES += \
-    vendor/motorola/athene/proprietary/etc/motorola/ecc_db/qcril_mot_ecc_common.db:$(TARGET_COPY_OUT_SYSTEM)/etc/motorola/ecc_db/qcril_mot_ecc_common.db \
     vendor/motorola/athene/proprietary/vendor/lib/liblqe.so:$(TARGET_COPY_OUT_VENDOR)/lib/liblqe.so \
-    vendor/motorola/athene/proprietary/vendor/lib/libprotobuf-cpp-moto.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-moto.so \
     vendor/motorola/athene/proprietary/vendor/lib/libqdp.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqdp.so \
     vendor/motorola/athene/proprietary/vendor/lib/libril-qc-ltedirectdisc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libril-qc-ltedirectdisc.so \
     vendor/motorola/athene/proprietary/vendor/lib/libril-qc-qmi-1.so:$(TARGET_COPY_OUT_VENDOR)/lib/libril-qc-qmi-1.so \
@@ -531,7 +543,18 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/lib/librilqmiservices.so:$(TARGET_COPY_OUT_VENDOR)/lib/librilqmiservices.so \
     vendor/motorola/athene/proprietary/vendor/lib/libsettings.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsettings.so \
     vendor/motorola/athene/proprietary/vendor/lib/libsystem_health_mon.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsystem_health_mon.so \
-    vendor/motorola/athene/proprietary/vendor/qcril.db:$(TARGET_COPY_OUT_VENDOR)/qcril.db
+    vendor/motorola/athene/proprietary/vendor/lib/libqsap_sdk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqsap_sdk.so \
+    vendor/motorola/athene/proprietary/vendor/lib/libqcrilFramework.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqcrilFramework.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.am@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so \
+    vendor/motorola/athene/proprietary/vendor/radio/qcril_database/qcril.db:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/qcril.db
 
 # QMI
 PRODUCT_COPY_FILES += \
@@ -552,7 +575,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/lib/libqmi_encdec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqmi_encdec.so \
     vendor/motorola/athene/proprietary/vendor/lib/libqmimotext.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqmimotext.so \
     vendor/motorola/athene/proprietary/vendor/lib/libqmiservices.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqmiservices.so \
-    vendor/motorola/athene/proprietary/vendor/lib/libqsap_sdk.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqsap_sdk.so \
     vendor/motorola/athene/proprietary/vendor/lib/libsmemlog.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsmemlog.so
 
 # DTV
@@ -622,7 +644,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/bin/pm-service:$(TARGET_COPY_OUT_VENDOR)/bin/pm-service \
     vendor/motorola/athene/proprietary/vendor/lib/libperipheral_client.so:$(TARGET_COPY_OUT_VENDOR)/lib/libperipheral_client.so
 
-# Others
+# Misc
 PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/lib/libdmengine.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libdmengine.so \
     vendor/motorola/athene/proprietary/lib/libdmjavaplugin.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libdmjavaplugin.so \
@@ -638,7 +660,8 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/athene/proprietary/vendor/lib/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib/libOpenCL.so \
     vendor/motorola/athene/proprietary/vendor/lib/libqdi.so:$(TARGET_COPY_OUT_VENDOR)/lib/libqdi.so \
     vendor/motorola/athene/proprietary/vendor/lib/libwfdcommonutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwfdcommonutils.so \
-    vendor/motorola/athene/proprietary/vendor/lib/libxml.so:$(TARGET_COPY_OUT_VENDOR)/lib/libxml.so
+    vendor/motorola/athene/proprietary/vendor/lib/libxml.so:$(TARGET_COPY_OUT_VENDOR)/lib/libxml.so \
+    vendor/motorola/athene/proprietary/vendor/lib/libmotext_inf.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmotext_inf.so
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm@1.0 \
@@ -653,4 +676,7 @@ PRODUCT_PACKAGES += \
     qcrilhook \
     DMService \
     SprintDM \
-    atfwd
+    atfwd \
+    QtiTelephonyService \
+    qti-telephony-common \
+    QtiTelephonyServicelibrary
