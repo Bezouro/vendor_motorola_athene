@@ -756,6 +756,4 @@ PRODUCT_PACKAGES += \
     qcrilhook \
     QtiTelephonyService \
     qti-telephony-common \
-    QtiTelephonyServicelibrary \
-    QPerformance \
-    UxPerformance
+    QtiTelephonyServicelibrary
